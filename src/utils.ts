@@ -1,18 +1,25 @@
+import { Network as alchemyNetwork, initializeAlchemy, Alchemy } from "@alch/alchemy-sdk";
 import HDWalletProvider = require("@truffle/hdwallet-provider");
-import {Network, OpenSeaPort} from 'opensea-js'
+import { Network as openseaNetwork, OpenSeaPort } from 'opensea-js'
 
-export function getProvider(privateKey: string, rpcUrl: string) : HDWalletProvider {
+export function getAlchemy(apiKey: string, network: alchemyNetwork, maxRetries: number): Alchemy {
+    return initializeAlchemy({
+        apiKey: apiKey!,
+        network: network,
+        maxRetries: maxRetries,
+    })
+}
+
+export function getProvider(privateKeys: string[], rpcUrl: string): HDWalletProvider {
     return new HDWalletProvider({
-        privateKeys: [
-            privateKey
-        ],
+        privateKeys: privateKeys,
         providerOrUrl: rpcUrl
     })
 }
 
-export function getSeaPort(provider: HDWalletProvider, apiKey: string) : OpenSeaPort {
+export function getSeaPort(provider: HDWalletProvider, apiKey: string): OpenSeaPort {
     return new OpenSeaPort(provider, {
-        networkName: Network.Main,
+        networkName: openseaNetwork.Main,
         apiKey: apiKey,
-    },(arg) => console.log(arg))
+    }, (arg) => console.log(arg))
 }
