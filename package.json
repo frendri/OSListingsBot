@@ -1,0 +1,25 @@
+{
+  "name": "oslistingbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "npx ts-node src/index.ts"
+  },
+  "author": "terncrypto",
+  "license": "MIT",
+  "dependencies": {
+    "@alch/alchemy-sdk": "^1.0.6",
+    "@opensea/stream-js": "^0.0.20",
+    "@truffle/hdwallet-provider": "^2.0.10-alpha.2",
+    "bignumber.js": "^9.0.2",
+    "dotenv": "^16.0.1",
+    "ethers": "^5.6.9",
+    "log-timestamp": "^0.3.0",
+    "opensea-js": "^4.0.4",
+    "pwned-hdwalletprovider": "^1.0.0",
+    "ts-node": "^10.8.1",
+    "ws": "^8.8.0",
+    "wyvern-schemas": "^0.6.15"
+  }
+}
