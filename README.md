@@ -4,7 +4,7 @@
 **Clone the project**
 
 ```bash
-  git clone https://github.com/frendri/OSListingsBot.git
+  git clone https://github.com/1makarov/OSListingsBot
 ```
 
 **Go to the project directory**
